@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método reduce</title>
+</head>
+<body>
+    
+    <h1>Compra del mercado</h1>
+
+    <!-- Contenedor -->
+    <div id="contenedor">
+
+    </div>
+    <script>
+        //Array con precios de productos
+        let compra = [15, 45, 60, 84, 91];
+
+        //Método reduce manda a llamar la función
+        let total = compra.reduce(SumaCompra);
+        
+        //Insertar el total de la compra en el contenedor
+        document.getElementById('contenedor').innerHTML = `
+            <p>
+                Total de la compra: $${total}
+            </p>
+        `;
+
+        //Función para sumar los precios de los productos
+        function SumaCompra(total, articulo){
+            return total + articulo;
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Chiennes</title>
+</head>
+<body>
+    <div id="contenedor">
+        
+    </div>
+    <script>
+        // let url = "https://random.dog/woof.json";
+        
+        let url = "https://api.chucknorris.io/jokes/random";
+
+        const consumirApi = async () =>{
+            const respuesta = await fetch(url);
+            const resultado = await respuesta.json();
+
+            console.log(resultado.value);
+            console.log(resultado.updated_at);
+
+            let imagen = document.createElement("img");
+
+            imagen.src=resultado.url;
+
+            document.getElementById('contenedor').appendChild(imagen);
+        }
+    </script>
+</body>
+</html>

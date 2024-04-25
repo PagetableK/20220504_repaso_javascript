@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método at</title>
+</head>
+<body>
+    <!-- Contenedor -->
+    <div id="contenedor">
+
+    </div>
+    <script>
+        //Array con los ligues activos
+        const ligues = ['Valdivieso', 'Isabel Santana', 'Mariana'];
+
+        //Almacenar el ligue de hoy
+        let ligue_dia = ligues.at(2);
+
+        //Mostrar el ligue del día de hoy
+        document.getElementById('contenedor').innerHTML=`
+            <h1>Lunes</h1>
+            <p>
+                ${ligue_dia}
+            </p>
+        `;
+    </script>
+</body>
+</html>

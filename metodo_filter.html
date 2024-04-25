@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método filter</title>
+</head>
+<body>
+    <!-- Contenedor -->
+    <div id="contenedor">
+        
+    </div>
+    <script>
+        //Array con cadenas de texto
+        let cadenas_de_texto = ['pablo@gmail.com', 'pablo', 'PabloSX', 'O07', 'allan@gmail.com'];
+
+        //Método filter manda a llamar la función
+        let correos = cadenas_de_texto.filter(ValidarCorreo);
+
+        //Insertar los correos por medio del html
+        document.getElementById('contenedor').innerHTML=`
+            <h1>Correos:</h1>
+            <h3>
+                <br>${correos}
+            </h3>
+        `;
+
+        //Función que valida el @ en la cadena de texto
+        function ValidarCorreo(texto){
+            return texto.indexOf('@') !== -1; 
+        }
+    </script>
+</body>
+</html>
