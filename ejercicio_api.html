@@ -6,27 +6,30 @@
     <title>API Chiennes</title>
 </head>
 <body>
-    <div id="contenedor">
+    <div id="contenedor" style="display: flex; justify-content: center;">
         
     </div>
+    <div style="display: flex; justify-content: center; margin-top: 10px;">
+        <div style="border-radius: 5px; background-color: #88ceeb; color: white; width: 100px; height: 50px; display: flex; text-align: center; align-items: center; justify-content: center; cursor: pointer;" onclick="consumirApi()">
+            Cargar perro
+        </div>
+    </div>
     <script>
-        // let url = "https://random.dog/woof.json";
-        
-        let url = "https://api.chucknorris.io/jokes/random";
+        let url = "https://random.dog/woof.json";
+        const contenedor = document.getElementById('contenedor');
 
         const consumirApi = async () =>{
+            contenedor.firstChild.remove();
             const respuesta = await fetch(url);
             const resultado = await respuesta.json();
 
-            console.log(resultado.value);
-            console.log(resultado.updated_at);
-
             let imagen = document.createElement("img");
-
             imagen.src=resultado.url;
 
-            document.getElementById('contenedor').appendChild(imagen);
+            contenedor.appendChild(imagen);
         }
+
+        consumirApi();
     </script>
 </body>
 </html>
